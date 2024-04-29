@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Autoplay</title>
+    <style>
+        img {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        #secondImage {
+            animation: scaleUp 2s ease-in-out infinite; 
+        }
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.5); 
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <H1 id="h1" style="color: red; background-color: mistyrose; text-align: center;">Sorry, Please click on the emoji.... </H1>
+    <img id="firstImage" src="1st.jpg" alt="First Image" onclick="playVideo()">
+    <!-- Second image with animation -->
+    <h2 id="h3" style="color: red; background-color: mistyrose; display: none; text-align: center;">Now scroll down slowly <br><br> I Love You So Much Bacha....</h2>
+    <img id="secondImage" src="2nd.jpeg" style="display: none;">
+    <iframe id="myVideo" src="https://www.youtube.com/watch?v=FFbc-jXkADs" frameborder="0" allowfullscreen></iframe>
+
+    <script>
+        function playVideo() {
+            const videoElement = document.getElementById("myVideo");
+            const imageElement = document.getElementById("firstImage");
+            const secondImg = document.getElementById("secondImage");
+            const h3 = document.getElementById("h3");
+            const h1 = document.getElementById("h1");
+            h3.style.display = "block";
+            secondImg.style.display = "block";
+            videoElement.style.display = "block"; 
+            imageElement.style.display = "none"; 
+            h1.style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
